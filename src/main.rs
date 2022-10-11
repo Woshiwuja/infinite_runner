@@ -6,7 +6,7 @@ pub const HEIGHT: f32 = 720.0;
 pub const WIDTH: f32 = 1280.0;
 
 fn spawn_fruit(mut commands: Commands, assets: Res<AssetServer>) {
-    let fruit = assets.load("fruit.glb#Scene0");
+        let fruit = assets.load("terrain.glb#Scene0");
     commands.spawn_bundle(SceneBundle {
         scene: fruit,
         transform: Transform::from_xyz(1.0, 1.0, 1.0),
