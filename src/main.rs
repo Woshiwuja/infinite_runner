@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use bevy_flycam::PlayerPlugin;
+use bevy::window::WindowMode::Fullscreen;
 use bevy_inspector_egui::WorldInspectorPlugin;
 use bevy_mod_picking::*;
 pub const HEIGHT: f32 = 720.0;
@@ -56,6 +57,7 @@ fn main() {
             height: HEIGHT,
             title: "bevy test".to_string(),
             resizable: false,
+                    mode: Fullscreen,
             ..Default::default()
         })
         .add_startup_system(spawn_scene)
@@ -63,7 +65,7 @@ fn main() {
         .add_startup_system(spawn_fruit)
         .add_plugins(DefaultPlugins)
         .add_plugins(DefaultPickingPlugins)
-        //.add_plugin(PlayerPlugin)
+        .add_plugin(PlayerPlugin)
         .add_plugin(WorldInspectorPlugin::new())
         .run();
 }
